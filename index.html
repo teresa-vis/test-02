@@ -1,0 +1,188 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Myself Blog</title>
+  <link rel="" href="./images/sourcepower.ico">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #eee;
+    }
+    /* * {
+      border: 1px solid black;
+    } */
+    .flex {
+      display: flex;
+    }
+    .baiSe {
+      background-color: white;
+    }
+    .flex1 {
+      flex: 1;
+    }
+    .column {
+      flex-direction: column;
+    }
+    .mg8 {
+      margin: 8px;
+    }
+    .mgr8 {
+      margin-right: 8px;
+    }
+    .mgt8 {
+      margin-top: 8px;
+    }
+    .yinying {
+      box-shadow: rgb(0, 0, 0 /20%) 0px 2px 1px -1px,
+        rgb(0, 0, 0 /14%) 0px 1px 1px 0px, rgb(0, 0, 0 /12%) 0px 1px 3px 0px;
+    }
+    img {
+      border-radius: 50%;
+    }
+    .daoHang{
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(190, 190, 190);
+        font-size: 14px;
+        color: #666;
+    }
+    @media (max-width:600px) {
+        .ceBian{
+            display: none;
+        }
+        .neiRong{
+            flex-direction: column;
+        }
+        .shuJuQu{
+            flex-direction: column;
+        }
+        .youQu{
+        margin-left: 8px;
+        }
+        .shuJu{
+            margin: 0 0 8px;
+            flex: auto;
+        }
+    }
+    .neiRong::-webkit-scrollbar{
+        display: none;
+    }
+  </style>
+</head>
+<body class="flex">
+  <!-- 侧边栏 -->
+  <div class="baiSe yinying ceBian" style="width: 200px; z-index: 2">
+    <!-- 头像栏 -->
+    <div
+      style="
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #999;
+      "
+      class="flex"
+    >
+      <img src="./images/teresa.jpg" alt="" width="40px" height="40px" />
+      <div style="margin-left: 10px">Teresa</div>
+    </div>
+    <!-- 导航栏 -->
+    <div class="flex1">
+        <div class="daoHang">导航</div>
+        <div class="daoHang">导航</div>
+        <div class="daoHang">导航</div>
+        <div class="daoHang">导航</div>
+        <div class="daoHang">导航</div>
+        <div class="daoHang">导航</div>
+    </div>
+    </div>
+  </div>
+  <!-- 主区域 -->
+  <div class="flex1 flex column">
+    <!-- 头部 -->
+    <div class="baiSe yinying" style="height: 60px; z-index: 1"></div>
+    <!-- 内容区 -->
+    <div class="flex1 flex neiRong" style="overflow: auto">
+      <!-- 左区 -->
+      <div style="flex: 3" class="column flex mg8">
+        <!-- 数据区 -->
+        <div class="flex shuJuQu">
+          <!-- 数据块 -->
+          <div style="height: 100px" class="shuJu flex1 baiSe mgr8 yinying"></div>
+          <div style="height: 100px" class="shuJu flex1 baiSe mgr8 yinying"></div>
+          <div style="height: 100px" class="shuJu flex1 baiSe mgr8 yinying"></div>
+          <div style="height: 100px" class="shuJu flex1 baiSe yinying"></div>
+        </div>
+        <!-- 列表区 -->
+        <div class="flex column">
+          <!-- 列表项 -->
+          <div style="height: 160px" class="baiSe mgt8 yinying"></div>
+          <div style="height: 160px" class="baiSe mgt8 yinying"></div>
+          <div style="height: 160px" class="baiSe mgt8 yinying"></div>
+          <div style="height: 160px" class="baiSe mgt8 yinying"></div>
+          <div style="height: 160px" class="baiSe mgt8 yinying"></div>
+          <div style="height: 160px" class="baiSe mgt8 yinying"></div>
+          <div style="height: 160px" class="baiSe mgt8 yinying"></div>
+        </div>
+      </div>
+      <!-- 右区 -->
+      <div style="flex: 1" class="flex column mgr8 mgt8 youQu">
+        <!-- 提示区 -->
+        <div style="height: 150px" class="baiSe yinying"></div>
+        <!-- 消息区 -->
+        <div style="height: 300px" class="baiSe mgt8 yinying"></div>
+      </div>
+    </div>
+  </div>
+  <!-- Code injected by live-server -->
+  <script>
+    // <![CDATA[  <-- For SVG support
+    if ("WebSocket" in window) {
+      (function () {
+        function refreshCSS() {
+          var sheets = [].slice.call(document.getElementsByTagName("link"));
+          var head = document.getElementsByTagName("head")[0];
+          for (var i = 0; i < sheets.length; ++i) {
+            var elem = sheets[i];
+            var parent = elem.parentElement || head;
+            parent.removeChild(elem);
+            var rel = elem.rel;
+            if (
+              (elem.href && typeof rel != "string") ||
+              rel.length == 0 ||
+              rel.toLowerCase() == "stylesheet"
+            ) {
+              var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+              elem.href =
+                url +
+                (url.indexOf("?") >= 0 ? "&" : "?") +
+                "_cacheOverride=" +
+                new Date().valueOf();
+            }
+            parent.appendChild(elem);
+          }
+        }
+        var protocol =
+          window.location.protocol === "http:" ? "ws://" : "wss://";
+        var address =
+          protocol + window.location.host + window.location.pathname + "/ws";
+        var socket = new WebSocket(address);
+        socket.onmessage = function (msg) {
+          if (msg.data == "reload") window.location.reload();
+          else if (msg.data == "refreshcss") refreshCSS();
+        };
+        if (
+          sessionStorage &&
+          !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+        ) {
+          console.log("Live reload enabled.");
+          sessionStorage.setItem("IsThisFirstTime_Log_From_LiveServer", true);
+        }
+      })();
+    } else {
+      console.error(
+        "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+      );
+    }
+    // ]]>
+  </script>
+</body>
